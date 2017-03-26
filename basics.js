@@ -8,54 +8,108 @@ var arr, findTwo, pusher, upFront, remover, copyCat, chopIt, sumIt, evenOdd,
 
 // 1. Create the variable arr and assign it an array with the following list of
 // numbers 12, 42, 36, 51, 96
+arr = [12, 42, 36, 51, 96];
 
 // 2. Create a function called findTwo that takes in the arr array and returns
 // the value at index 2.
+findTwo = function(arr) {
+  return arr[2];
+}
 
 // 3. Create a function called pusher that takes in an array and a number and
 // positions the number at the end of the array. Return the new array.
+pusher = function(newArr, num){
+   newArr.push(num);
+   return newArr;
+}
 
 // 4. Create a function called upFront that takes in an array and a number and
 // positions the number in beginning of the array. Return the new array.
+upFront = function(newArr, num) {
+   newArr.unshift(num);
+   return newArr;
+}
 
 // 5. Create a function called remover that takes in an array and removes the
 // value at the end of the array. Return the new array.
+remover = function(newArr, num) {
+   newArr.pop(num);
+   return newArr;
+}
 
 // 6. Create a function called copyCat that takes in an array, copies, and
 // returns the second and third index values.
+copyCat = function(newArr, num) {
+   newNewArr = [newArr[2], newArr[3]];
+   return newNewArr;
+}
 
 // 7. Create a function called chopIt that takes in an array and two numbers.
 // It deletes the original 3rd index value and inserts the two numbers in it's place.
+chopIt = function(newArr, num, num2) {
+   newArr.splice(3,1,num,num2);
+   return newArr;
+}
 
 // 8. Create a function called sumIt that takes in the array and returns the sum
 // of each of the values in the array.
+sumIt = function(newArr) {
+   return newArr.reduce(function(a,b){
+      return a + b;
+   });
+}
 
 // 9. Create a function called evenOdd that takes in the array and pushes into a
 // new array "even" or "odd" for every value in the array, depending upon
 // whether they are even or odd number values. Return the new array.
 // Hint: Use the modulus operator
+evenOdd = function(newArr) {
+   return newArr.map(function(val){
+      if (val % 2 === 0){
+        return "even";
+      } else {
+        return "odd";
+     }
+   })
+}
 
 // 10. Create a function called timesTen that takes in an array and multiplies
 // each value by 10 and returns the new array.
 // Hint: Use the map method
+timesTen = function(newArr) {
+   return newArr.map((val) => val * 10);
+}
 
 // Objects
 
 // 1. Create an object called animal. Make sure the animal has the following
 // keys. (species, name, age, gender, favoriteFood) Also, give the animal a
 // method of speech that returns a string that displays what the animal says.
+animal = {
+   species: "bear",
+   name:  "bear",
+   age: 3,
+   gender: "trans",
+   favoriteFood: "bearies",
+}
+
+animal.speech = () => "growl";
 
 // 2. Create a function called findAge that takes in an object and returns the
 // age key value.
+findAge = (obj) => obj.age;
 
 // 3. Create a function called getKeys that takes in an object and returns all
 // of the key names (not values!).
+getKeys = function (obj) { return Object.keys(obj); } 
 
 // 4. Create a function called changeName that takes in an object and a name
 // value and replaces the object name with the given name value. Return the new object.
+changeName = (obj, name) => obj.name = name;
 
 // 5. Create a function called speechMaker that takes in an object and returns
 // the response from calling the speech method.
+speechMaker = (obj) => obj.speech();
 
 // 6. Create a function called addKey that takes in an object and adds a new key
 // name bedtime and assigns it a value. Return the object.
